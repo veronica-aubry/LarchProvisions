@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "ViewBagDemo";
+}
+
+
+@foreach (var recipe in ViewBag.Recipe)
+{
+    <h1>@recipe.Name</h1>
+}
+
+
+
+@foreach (var ingredient in ViewBag.Ingredient)
+{
+    <option>@ingredient.Name</option>
+}
+
