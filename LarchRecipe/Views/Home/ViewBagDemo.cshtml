@@ -3,13 +3,7 @@
     ViewBag.Title = "ViewBagDemo";
 }
 
-
-@foreach (var recipe in ViewBag.Recipe)
-{
-    <h1>@recipe.Name</h1>
-}
-
-
+@ViewBag.Recipe.Name
 
 @foreach (var ingredient in ViewBag.Ingredient)
 {
