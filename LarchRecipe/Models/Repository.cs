@@ -26,7 +26,6 @@ namespace LarchRecipe.Models
             return recipes;
         }
 
-
         public List<Ingredient> GetIngredients()
         {
             IngredientDBContext db = new IngredientDBContext();
@@ -37,6 +36,20 @@ namespace LarchRecipe.Models
             }
                           
             return ingredients;
+        }
+
+        public List<Ingredient> GetRecipeIngredients(int? recipeId)
+        {
+            IngredientDBContext db = new IngredientDBContext();
+            List<Ingredient> ingredients = new List<Ingredient> { };
+            foreach (var i in db.Ingredients)
+            {
+                if (i.RecipeId == recipeId)
+                {
+                    ingredients.Add(i);
+                }
+            }
+             return ingredients;
         }
 
 

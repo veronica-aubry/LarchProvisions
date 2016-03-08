@@ -9,6 +9,8 @@ namespace LarchRecipe.Controllers
 {
     public class HomeController : Controller
     {
+        private RecipesDBContext db = new RecipesDBContext();
+
         Repository _repository = new Repository();
 
         public ActionResult Index()
@@ -29,11 +31,11 @@ namespace LarchRecipe.Controllers
 
             return View();
         }
-
-        public ActionResult ViewBagDemo()
+        // GET: Home/ViewBagDemo/1
+        public ActionResult ViewBagDemo(int? id)
         {
-            ViewBag.Recipe = _repository.GetRecipes();
-            ViewBag.Ingredient = _repository.GetIngredients();
+            ViewBag.Recipe = db.Recipe.Find(id);
+            ViewBag.Ingredient = _repository.GetRecipeIngredients(id);
             return View();
         }
     }
