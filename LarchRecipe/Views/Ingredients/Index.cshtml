@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LarchRecipe.Models.Ingredient>
+﻿@model IQueryable<LarchRecipe.Models.Ingredient>
 
 @{
     ViewBag.Title = "Index";
@@ -9,71 +9,72 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-    @using (Html.BeginForm())
-    {
+@using (Html.BeginForm())
+{
     <p>
         Ingredient Name: @Html.TextBox("SearchString")
         <br />
         <input type="submit" value="Search" />
     </p>
-    }
-    
-    <table class="table">
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            Amount needed for one serving
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeId)
+        </th>
+
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        double SingleAmount = item.SingleServing();
+        <!-- here we can make this number pretty. check to divide by 2, 4 or 16 for cups,
+            free labels will need to be at the nearest half, maybe quarter,
+            all numbers rounded to the nearest one-hundreth decimal point.
+            Fractions if you're feelin fancy
+        -->
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Source)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Amount)
-            </th>
-            <th>
-                Amount needed for one serving
-                
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RecipeId)
-            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => SingleAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeId)
+            </td>
 
-            <th>
-            </th>
-
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
         </tr>
-        @foreach (var item in Model)
-        {
-            double SingleAmount = item.SingleServing();
-
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Source)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Amount)
-                </td>
-                <td>            
-                    @Html.DisplayFor(modelItem => SingleAmount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Unit)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RecipeId)
-                </td>
-
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
-            </tr>
-        }
-
-    </table>
+    }
+</table>

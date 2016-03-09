@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LarchRecipe.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,13 +7,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using LarchRecipe.Models;
 
 namespace LarchRecipe.Controllers
 {
     public class IngredientsController : Controller
     {
-        private IngredientDBContext db = new IngredientDBContext();
+        private RecipesDBContext db = new RecipesDBContext();
 
         // GET: Ingredients
         public ActionResult Index(string searchString)
@@ -26,6 +26,17 @@ namespace LarchRecipe.Controllers
             }
 
             return View(ingredients);
+        }
+
+        //GET: Ingredients/1
+        public ActionResult RecipeIngredients(int id)
+        {
+            var ingredients = from i in db.Ingredients
+                              select i;
+
+            ingredients = ingredients.Where(s => s.RecipeId == id);
+
+            return View("Index", ingredients);
         }
 
         // GET: Ingredients/Details/5
@@ -50,7 +61,7 @@ namespace LarchRecipe.Controllers
         }
 
         // POST: Ingredients/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -82,7 +93,7 @@ namespace LarchRecipe.Controllers
         }
 
         // POST: Ingredients/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
