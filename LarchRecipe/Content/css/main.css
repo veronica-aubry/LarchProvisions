@@ -6225,6 +6225,12 @@ html {
 /**
  * Basic typography style for copy text
  */
+**:not(body):not(html) {
+  border: 1px dashed blue; }
+
+.columns {
+  min-height: 100px !important; }
+
 /* Basic styles for links
 */
 a {
@@ -6236,7 +6242,7 @@ a {
 
 body {
   color: #ffffff;
-  background-color: #78512D;
+  background-color: #320d08;
   font: normal 125%/1.4 "Dosis", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 /**
@@ -6253,9 +6259,8 @@ body {
  * 2. Center it in the viewport
  * 3. Leave some space on the edges, especially valuable on small screens
  */
-.container {
-  max-width: 1180px;
-  /* 1 */
+.wrapper {
+  align-items: center;
   margin-left: auto;
   /* 2 */
   margin-right: auto;
@@ -6294,52 +6299,31 @@ body {
   position: absolute;
   width: 1px; }
 
-ul {
-  margin: 10px;
-  display: flex;
-  list-style-type: none;
-  justify-content: space-around;
-  font-size: 18px;
-  text-transform: uppercase; }
-
-li a {
-  color: #ffffff; }
+nav {
+  background-color: #320d08;
+  font-family: "Lora", sans-serif; }
+  nav ul {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    text-transform: uppercase; }
+    nav ul li a {
+      color: #ffffff; }
 
 .logo {
   position: absolute;
-  left: 25%;
-  top: 50%;
-  width: 30em;
-  height: auto;
-  z-index: 1; }
-  .logo img {
-    width: 100%;
-    height: 100%; }
-
-.nav {
-  background-color: #78512D;
-  font-family: "Lora", sans-serif; }
-
-.content {
-  display: flex; }
-
-.column1, .column2, .column3 {
-  display: flex;
-  border: 1px solid red;
-  flex: 1;
-  height: 500px; }
-
-.column1 p {
-  margin: 10px;
-  padding: 10px;
-  font-size: 16px; }
-
-ul {
-  list-style: none; }
-
-.carousel-caption h1 {
-  font-size: 500%;
-  text-shadow: 2px 2px #78512D; }
+  top: 10%;
+  left: 20%;
+  bottom: 30%;
+  margin: 0;
+  padding: 0;
+  font-family: "Courgette", sans-serif;
+  font-size: 36px;
+  text-align: center;
+  text-shadow: #222222;
+  z-index: 1;
+  border: 1px dashed blue; }
 
 #carousel-couple {
   margin-bottom: 5px; }
@@ -6361,24 +6345,16 @@ ul {
 .carousel {
   margin: 0 auto;
   max-width: 100%;
-  background-color: #78512D; }
+  background-color: #320d08; }
 
 #carousel-example-generic.carousel.slide {
-  background-color: #78512D; }
+  background-color: #320d08; }
 
 .item {
   top: 0;
   left: 0;
   height: auto;
   min-width: 100%; }
-
-.carousel img {
-  top: 0;
-  left: 0;
-  min-width: 100%; }
-
-h3 {
-  background-color: #78512D; }
 
 .dropdown {
   text-align: center; }
@@ -6401,7 +6377,7 @@ h3 {
 /*Controls the header on the first page. Does not control the tittle*/
 .page-header {
   text-align: center;
-  background-color: #78512D;
+  background-color: #320d08;
   height: 100px;
   margin-top: -40px;
   margin-bottom: -20px; }
@@ -6418,7 +6394,7 @@ h3 {
   height: 50px;
   margin-top: -20px;
   text-indent: center;
-  background-color: #78512D;
+  background-color: #320d08;
   text-align: center;
   padding-top: 10px;
   font-family: Georgia serif; }
@@ -6430,79 +6406,85 @@ h3 {
 /*-----------
 MEDIA QUERIES
 ------------*/
-@media only screen and (max-width: 2300px) {
-  #environment {
-    margin-bottom: 700px; } }
-@media only screen and (max-width: 2000px) {
-  #environment {
-    margin-bottom: 600px; } }
-@media only screen and (max-width: 1800px) {
-  #environment {
-    margin-bottom: 550px; } }
-@media only screen and (max-width: 1600px) {
-  #environment {
-    margin-bottom: 500px; } }
-@media only screen and (max-width: 1400px) {
-  #environment {
-    margin-bottom: 425px; } }
-@media only screen and (max-width: 1300px) {
-  #environment {
-    margin-bottom: 325px; } }
-@media only screen and (max-width: 1200px) {
-  #environment {
-    margin-bottom: 250px; } }
-@media only screen and (max-width: 1030px) {
-  #environment {
-    margin-bottom: 235px; } }
-@media only screen and (max-width: 990px) {
-  #environment {
-    margin-bottom: 200px; } }
-@media only screen and (max-width: 930px) {
-  #environment {
-    margin-bottom: 125px; } }
-@media only screen and (max-width: 790px) {
-  #animals, #kids, #environment {
-    font-size: 200%; } }
-@media only screen and (max-width: 540px) {
-  #kids {
-    margin-bottom: 10px; }
-
-  #environment {
-    margin-bottom: 150px; } }
-@media only screen and (max-width: 480px) {
-  #environment {
-    margin-bottom: 100px; } }
-@media only screen and (max-width: 425px) {
-  #environment {
-    margin-bottom: 50px; } }
-@media only screen and (max-width: 340px) {
-  #environment {
-    margin-bottom: 0px; } }
-@media only screen and (max-width: 480px) {
-  .search input {
-    width: 85%;
-    margin-left: 15px; }
-
-  .btn {
-    margin-left: 15px; } }
-/*Media querie for bottom header on the main page*/
-/*Media querie for 1040px*/
-@media only screen and (max-width: 1040px) {
-  #bottom-header {
-    margin-bottom: 0px;
-    font-size: 98%; } }
-/*media querie for 325px*/
-@media only screen and (max-width: 325px) {
-  #bottom-header {
-    margin-bottom: 0px;
-    font-size: 9px; } }
-/*media querie for header in index. "volunteer connection. get involved"*/
-@media only screen and (max-width: 500px) {
-  #header-title {
-    font-size: 20px; } }
-@media only screen and (max-width: 770px) {
-  #center-inputs {
-    width: 80%; } }
 /*End of Media querie*/
+.content {
+  display: flex; }
+
+.column1, .column2, .column3 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  flex: 1;
+  height: 500px;
+  overflow: hidden;
+  background-color: #082e32; }
+  .column1 h3, .column2 h3, .column3 h3 {
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center; }
+  .column1 p, .column2 p, .column3 p {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px; }
+
+.about-wrapper .nav {
+  font-family: "Lora", sans-serif; }
+  .about-wrapper .nav ul {
+    margin: 10px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    font-size: 18px;
+    text-transform: uppercase; }
+  .about-wrapper .nav li a {
+    color: #ffffff; }
+
+.about-tittle {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px; }
+
+.about-image {
+  display: flex;
+  justify-content: center; }
+
+.about-content {
+  display: flex; }
+  @media (max-width: 650px) {
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      margin-top: -50px; } }
+
+.about-column1, .about-column2 {
+  flex: 1;
+  height: auto;
+  text-align: center; }
+
+.about {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  text-align: justify; }
+
+.menu-wrapper ul {
+  margin: 10px;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  font-size: 18px;
+  text-transform: uppercase; }
+.menu-wrapper li a {
+  color: #ffffff; }
+
+.menu-tittle {
+  border: 1px solid red;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px; }
 
 /*# sourceMappingURL=main.css.map */

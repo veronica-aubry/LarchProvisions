@@ -2,6 +2,14 @@
  * Basic typography style for copy text
  */
 
+ **:not(body):not(html) {
+   border:1px dashed blue;
+ }
+
+ .columns {
+   min-height: 100px !important;
+ }
+
   /* Basic styles for links
   */
  a {

@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the menu of the site/application.
+// -
+.menu-wrapper {
+  .nav {
+    // background-color: lighten($background-color, 10%);
+    // background-color: blue;
+    // font-family: $nav-font-stack;
+  }
+
+  ul {
+    // border: 1px solid magenta;
+    margin: 10px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  li a {
+    color: $base-text-color;
+  }
+}
+
+.menu-tittle {
+  border: 1px solid red;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px;
+
+}
