@@ -16,6 +16,11 @@ namespace LarchRecipe.Models
         public string Description { get; set; }
         public string Notes { get; set; }
         public int Servings { get; set; }
+
+        public string GetName()
+        {
+            return Name;
+        }
     }
 
     public class Ingredient
@@ -40,6 +45,25 @@ namespace LarchRecipe.Models
             else
             {
                 return 0;
+            }
+        }
+        /*I am trying to take the recipe ID that was entered and get the recipes name from that */
+        
+        public string GetRecipeName()
+        {
+            RecipesDBContext db = new RecipesDBContext();
+
+            if (RecipeId != 0)
+            {
+                Recipe recipe = db.Recipe.Find(this.RecipeId);
+
+                string recipeName = recipe.GetName();
+
+                return recipeName;
+            }
+            else
+            {
+                return "";
             }
         }
     }

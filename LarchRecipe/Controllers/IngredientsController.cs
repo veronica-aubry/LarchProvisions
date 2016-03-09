@@ -28,6 +28,8 @@ namespace LarchRecipe.Controllers
             return View(ingredients);
         }
 
+        //public ActionResult GetName()
+
         //GET: Ingredients/1
         public ActionResult RecipeIngredients(int id)
         {
