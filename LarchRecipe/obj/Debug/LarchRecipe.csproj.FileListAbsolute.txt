@@ -129,3 +129,4 @@ C:\Users\epicodus_student\Desktop\LarchProvisions\LarchRecipe\bin\Antlr3.Runtime
 C:\Users\epicodus_student\Desktop\LarchProvisions\LarchRecipe\bin\Newtonsoft.Json.xml
 C:\Users\epicodus_student\Desktop\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.dll
 C:\Users\epicodus_student\Desktop\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.pdb
+C:\Users\epicodus_student\Desktop\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.csprojResolveAssemblyReference.cache
