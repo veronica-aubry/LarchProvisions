@@ -4,6 +4,21 @@
     ViewBag.Title = "Create";
 }
 
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    foreach (var recipe in ViewBag.Recipes)
+    {
+        listItems.Add(new SelectListItem
+        {
+            Text = @recipe.Name,
+            Value = @recipe.ID.ToString()
+    });
+}
+}
+ 
+
+
+
 <h2>Create</h2>
 
 @using (Html.BeginForm())
@@ -49,7 +64,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.RecipeId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.RecipeId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.RecipeId, listItems, "-- Select Recipe --")
                 @Html.ValidationMessageFor(model => model.RecipeId, "", new { @class = "text-danger" })
             </div>
         </div>

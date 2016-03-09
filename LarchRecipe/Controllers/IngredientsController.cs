@@ -14,6 +14,8 @@ namespace LarchRecipe.Controllers
     {
         private RecipesDBContext db = new RecipesDBContext();
 
+        Repository _repository = new Repository();
+
         // GET: Ingredients
         public ActionResult Index(string searchString)
         {
@@ -59,6 +61,7 @@ namespace LarchRecipe.Controllers
         // GET: Ingredients/Create
         public ActionResult Create()
         {
+            ViewBag.Recipes = _repository.GetRecipes();
             return View();
         }
 
