@@ -31,7 +31,7 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
-                gaaaah! something close!!
+                <br/>
                 @Html.ActionLink("Ingredients", "Index", "Ingredients", new { id = item.ID }, null)
             </td>
             <td>
@@ -46,8 +46,7 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })|
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })|
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
                 @Html.ActionLink("Add Ingredients", "Create", "Ingredients", new { id=item.ID }, null)
             </td>
         </tr>
