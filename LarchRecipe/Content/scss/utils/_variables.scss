@@ -8,6 +8,8 @@ $content-font-stack: 'Dosis', 'Helvetica Neue Light', 'Helvetica Neue', 'Helveti
 
 $nav-font-stack: 'Lora', sans-serif !default;
 
+$header-font-stack: 'Courgette', sans-serif !default;
+
 $nav-font-stack: 'Lora:700', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
 
@@ -15,15 +17,20 @@ $nav-font-stack: 'Lora:700', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetic
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
+$brown: 	#7d280b;
+$wood-brown: #48120c;
+$white: #ffffff;
+$black: rgb(34, 34, 34);
+$complement-color: complement($wood-brown);
 // Color Palette //
-$background-color: #78512D;
-$base-text-color: #ffffff;
-$tittle-text-color: darken($base-text-color, 40%);
+$background-color: darken($wood-brown, 5%);
+$base-text-color: $white;
+$title-text-color: darken($base-text-color, 40%);
 
 
 /// Copy text shadow color
 /// @type Color
-$text-shadow:rgb(34, 34, 34);
+$text-shadow:$black;
 
 /// Container's maximum width
 /// @type Length
