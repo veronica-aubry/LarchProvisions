@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LarchRecipe.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,18 +7,16 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using LarchRecipe.Models;
 
 namespace LarchRecipe.Models
 {
     public class Repository
     {
+        private RecipesDBContext db = new RecipesDBContext();
 
- 
         public List<Recipe> GetRecipes()
         {
-            RecipesDBContext db = new RecipesDBContext();
-            List<Recipe> recipes = new List<Recipe>{ };
+            List<Recipe> recipes = new List<Recipe> { };
             foreach (var i in db.Recipe)
             {
                 recipes.Add(i);
@@ -26,21 +25,33 @@ namespace LarchRecipe.Models
             return recipes;
         }
 
+        public Recipe GetRecipe(int? id)
+        {
+            Recipe recipe = new Recipe();
+            foreach (var i in db.Recipe)
+            {
+                if (i.ID == id)
+                {
+                    recipe = i;
+                }
+            }
+
+            return recipe;
+        }
+
         public List<Ingredient> GetIngredients()
         {
-            IngredientDBContext db = new IngredientDBContext();
             List<Ingredient> ingredients = new List<Ingredient> { };
             foreach (var i in db.Ingredients)
             {
                 ingredients.Add(i);
             }
-                          
+
             return ingredients;
         }
 
         public List<Ingredient> GetRecipeIngredients(int? recipeId)
         {
-            IngredientDBContext db = new IngredientDBContext();
             List<Ingredient> ingredients = new List<Ingredient> { };
             foreach (var i in db.Ingredients)
             {
@@ -49,9 +60,7 @@ namespace LarchRecipe.Models
                     ingredients.Add(i);
                 }
             }
-             return ingredients;
+            return ingredients;
         }
-
-
     }
 }
