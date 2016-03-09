@@ -26,6 +26,7 @@ namespace LarchRecipe.Controllers
         // GET: Recipes/Create
         public ActionResult Create()
         {
+           ViewBag.Recipes = _repository.GetRecipes();
             return View();
         }
 
