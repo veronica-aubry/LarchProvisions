@@ -220,3 +220,6 @@ C:\Users\epicodus_student\Desktop\newFolder\LarchProvisions\LarchRecipe\obj\Debu
 C:\Users\epicodus_student\Desktop\newFolder\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.csproj.GenerateResource.Cache
 C:\Users\epicodus_student\Desktop\newFolder\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.dll
 C:\Users\epicodus_student\Desktop\newFolder\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.pdb
+C:\Users\epicodus_student\Desktop\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.csprojResolveAssemblyReference.cache
+C:\Users\epicodus_student\Desktop\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.Migrations.MergeIngredientsDb.resources
+C:\Users\epicodus_student\Desktop\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.csproj.GenerateResource.Cache

@@ -15,25 +15,12 @@ namespace LarchRecipe.Controllers
     {
         private RecipesDBContext db = new RecipesDBContext();
 
+        Repository _repository = new Repository();
+
         // GET: Recipes
         public ActionResult Index()
         {
             return View(db.Recipe.ToList());
-        }
-
-        // GET: Recipes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Recipe recipe = db.Recipe.Find(id);
-            if (recipe == null)
-            {
-                return HttpNotFound();
-            }
-            return View(recipe);
         }
 
         // GET: Recipes/Create
@@ -129,6 +116,18 @@ namespace LarchRecipe.Controllers
             ingredients = ingredients.Where(i => i.RecipeId == id);
             ViewBag.Ingredients = ingredients;
             return View("Index", "Ingredients", ingredients);
+        }
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            ViewBag.Recipe = db.Recipe.Find(id);
+            ViewBag.Ingredient = _repository.GetRecipeIngredients(id);
+            return View();
         }
 
         protected override void Dispose(bool disposing)
