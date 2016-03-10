@@ -4,6 +4,18 @@
     ViewBag.Title = "Create";
 }
 
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    foreach (var recipe in ViewBag.Recipes)
+    {
+        listItems.Add(new SelectListItem
+        {
+            Text = @recipe.Name,
+            Value = @recipe.ID.ToString()
+        });
+    }
+}
+
 <h2>Create</h2>
 
 @using (Html.BeginForm())

@@ -18,6 +18,7 @@ namespace LarchRecipe.Controllers
         // GET: Recipes
         public ActionResult Index()
         {
+            ViewBag.Ingredients = db.Ingredients.ToList();
             return View(db.Recipe.ToList());
         }
 

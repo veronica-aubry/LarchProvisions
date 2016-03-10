@@ -168,7 +168,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="about.html" />
-    <Content Include="Views\Home\Menu.html" />
+    <None Include="Views\Home\Menu.cshtml" />
     <Content Include="Views\Ingredients\Create.cshtml" />
     <Content Include="Views\Ingredients\Delete.cshtml" />
     <Content Include="Views\Ingredients\Details.cshtml" />

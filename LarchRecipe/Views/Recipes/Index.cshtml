@@ -20,6 +20,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Notes)
         </th>
+        <th><h4>Ingredients</h4></th>
         <th>
             @Html.DisplayNameFor(model => model.Servings)
         </th>
@@ -30,9 +31,9 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
-                gaaaah! something close!!
-                @Html.ActionLink("Ingredients", "Index", "Ingredients", new { id = item.ID }, null)
+                @Html.ActionLink(item.Name, "Index", "Ingredients", new { id = item.ID }, null)
+                <br />
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
@@ -41,15 +42,41 @@
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Servings)
+                <ul>
+                    @{
+                        foreach (var ingredient in ViewBag.Ingredients)
+                        {
+                            if (ingredient.RecipeId == item.ID)
+                            {
+                                <li>@ingredient.Amount @ingredient.Unit ingredient.Name</li>
+                            }
+                        }
+                    }
+                </ul>
             </td>
             <td>
+                @{
+                    foreach (var ingredient in ViewBag.Ingredients)
+                    {
+                        if (ingredient.RecipeId == item.ID)
+                        {
+                            <form method="post" action="">
+                                Show requirements for <input type="number" name="ServingSize" value="@item.Servings"> servings:
+                                <input type="submit" value="Submit" class="submit">
+                            </form>
+                        }
+                        string serving = Request["ServingSize"];
+
+                        ingredient.SingleServing() * Int32.Parse(serving));
+                        @Html.DisplayFor(modelItem => item.Servings)
+
+                    }
+        </td>
+            <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })|
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })|
-                @Html.ActionLink("Add Ingredients", "Create", "Ingredients", new { id=item.ID }, null)
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })|               |
+                @Html.ActionLink("Add Ingredients", "Create", "Ingredients", new { id = item.ID }, null)
             </td>
         </tr>
-    }
-</table>
+                }
+            </table>
