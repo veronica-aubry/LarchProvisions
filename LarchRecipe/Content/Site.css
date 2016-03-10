@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -6225,12 +6225,6 @@ html {
 /**
  * Basic typography style for copy text
  */
-**:not(body):not(html) {
-  border: 1px dashed blue; }
-
-.columns {
-  min-height: 100px !important; }
-
 /* Basic styles for links
 */
 a {
@@ -6243,7 +6237,7 @@ a {
 body {
   color: #ffffff;
   background-color: #320d08;
-  font: normal 125%/1.4 "Dosis", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font: normal 125%/1.4 "Dosis", sans-serif; }
 
 /**
  * Clear inner floats
@@ -6299,31 +6293,34 @@ body {
   position: absolute;
   width: 1px; }
 
-nav {
-  background-color: #320d08;
-  font-family: "Lora", sans-serif; }
-  nav ul {
-    margin: 10px;
-    display: flex;
-    justify-content: space-around;
-    font-size: 18px;
-    text-transform: uppercase; }
-    nav ul li a {
-      color: #ffffff; }
+.container {
+  width: 100%; }
+
+.navbar {
+  background-color: #320d08; }
+  .navbar .nav {
+    font-family: "Lora", sans-serif; }
+    .navbar .nav ul {
+      margin: 10px;
+      display: flex;
+      justify-content: space-around;
+      font-size: 18px;
+      text-transform: uppercase; }
+      .navbar .nav ul li a {
+        color: #ffffff; }
 
 .logo {
   position: absolute;
   top: 10%;
   left: 20%;
-  bottom: 30%;
+  bottom: 54.5%;
   margin: 0;
   padding: 0;
   font-family: "Courgette", sans-serif;
   font-size: 36px;
   text-align: center;
   text-shadow: #222222;
-  z-index: 1;
-  border: 1px dashed blue; }
+  z-index: 1; }
 
 #carousel-couple {
   margin-bottom: 5px; }
@@ -6340,7 +6337,11 @@ nav {
 .item {
   align-items: center;
   max-width: none;
-  height: 30%; }
+  height: 30%;
+  top: 0;
+  left: 0;
+  height: auto;
+  min-width: 100%; }
 
 .carousel {
   margin: 0 auto;
@@ -6350,97 +6351,21 @@ nav {
 #carousel-example-generic.carousel.slide {
   background-color: #320d08; }
 
-.item {
-  top: 0;
-  left: 0;
-  height: auto;
-  min-width: 100%; }
-
-.dropdown {
-  text-align: center; }
-
-.form-control {
-  margin-bottom: -10px;
-  width: 100%; }
-
-.form-control#start-date, #end-date {
-  width: 75%; }
-
-#center-inputs {
-  width: 100%;
-  margin-left: 8%;
-  margin-bottom: 10px; }
-
-#distance {
-  margin-bottom: -40px; }
-
-/*Controls the header on the first page. Does not control the tittle*/
-.page-header {
-  text-align: center;
-  background-color: #320d08;
-  height: 100px;
-  margin-top: -40px;
-  margin-bottom: -20px; }
-
-/*Control padding of Volunteer Connection tittle*/
-#header-title {
-  padding-top: 50px;
-  font-family: Tahoma serif;
-  text-shadow: #222222 1px;
-  font-size: 36px; }
-
-/*Bottom header: It says "Type in a search keyboard below or click"*/
-#bottom-header {
-  height: 50px;
-  margin-top: -20px;
-  text-indent: center;
-  background-color: #320d08;
-  text-align: center;
-  padding-top: 10px;
-  font-family: Georgia serif; }
-
-.btn {
-  width: 100px;
-  margin-bottom: 5px; }
-
-/*-----------
-MEDIA QUERIES
-------------*/
 /*End of Media querie*/
 .content {
-  display: flex; }
-
-.column1, .column2, .column3 {
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
   flex-wrap: nowrap;
   flex-direction: column;
+  border: 3px solid #320d08;
   flex: 1;
-  height: 500px;
   overflow: hidden;
   background-color: #082e32; }
-  .column1 h3, .column2 h3, .column3 h3 {
+  .content p {
     margin: 10px;
     padding: 10px;
-    font-size: 20px;
-    text-align: center; }
-  .column1 p, .column2 p, .column3 p {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px; }
-
-.about-wrapper .nav {
-  font-family: "Lora", sans-serif; }
-  .about-wrapper .nav ul {
-    margin: 10px;
-    display: flex;
-    list-style-type: none;
-    justify-content: space-around;
-    font-size: 18px;
-    text-transform: uppercase; }
-  .about-wrapper .nav li a {
-    color: #ffffff; }
+    font-size: 24px; }
 
 .about-tittle {
   text-align: center;
@@ -6471,20 +6396,53 @@ MEDIA QUERIES
   font-size: 16px;
   text-align: justify; }
 
-.menu-wrapper ul {
-  margin: 10px;
-  display: flex;
-  list-style-type: none;
-  justify-content: space-around;
-  font-size: 18px;
-  text-transform: uppercase; }
-.menu-wrapper li a {
-  color: #ffffff; }
-
 .menu-tittle {
-  border: 1px solid red;
   text-align: center;
   margin-top: 40px;
   font-size: 40px; }
+
+.menu-cover {
+  width: 100%;
+  height: 30%; }
+
+.menu-content-main {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 16px;
+  text-align: justify;
+  text-align: center; }
+  .menu-content-main h1 {
+    margin-top: 20px;
+    font-size: 26px; }
+    @media (max-width: 560px) {
+      .menu-content-main h1 {
+        width: 100%;
+        font-size: 16px; } }
+
+.menu-content-main p {
+  margin-top: 20px;
+  font-size: 16px;
+  padding-bottom: 15px;
+  letter-spacing: 2px; }
+  @media (max-width: 560px) {
+    .menu-content-main p {
+      font-size: 14px; } }
+
+.menu-content-body ol {
+  width: 80%;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-top: 20px;
+  line-height: 29px;
+  text-align: left; }
+  .menu-content-body ol li {
+    text-align: center;
+    letter-spacing: 2px; }
+    @media (max-width: 560px) {
+      .menu-content-body ol li {
+        font-size: 12px;
+        list-style: decimal;
+        text-align: left;
+        letter-spacing: 0px; } }
 
 /*# sourceMappingURL=main.css.map */

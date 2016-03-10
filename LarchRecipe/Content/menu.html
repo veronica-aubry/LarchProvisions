@@ -1,51 +1,67 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>Larch Provissions</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <title>Menu - Larch Provissions</title>
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora:400' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Poiret+One|Quicksand|Courgette' rel='stylesheet' type='text/css'><script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-  </head>
-  <body>
-    <div class="menu-wrapper">
-      <div class="nav">
-        <p class="menu-tittle">Larch Provisions</p>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <br>
-      <img class="menu-cover" src="img/menu-cover3.jpg" alt="" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="ingredients.html">Ingredients</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <br>
+        <img class="menu-cover" src="~/Content/img/menu-cover3.jpg" alt="" />
         <div class="menu-content-main">
-          <h1>Welcome to Larch Provisions weekly freshly prepared meal service by Emily Cafazzo &amp; Ryan Domingo.</h1>
-          <p>We cook healthy, balanced meals using as many local, organic &amp; seasonal ingredients as possible; showcasing the bounty of the Pacific Northwest.</p>
+            <h1>Welcome to Larch Provisions weekly freshly prepared meal service by Emily Cafazzo &amp; Ryan Domingo.</h1>
+            <p>We cook healthy, balanced meals using as many local, organic &amp; seasonal ingredients as possible; showcasing the bounty of the Pacific Northwest.</p>
         </div>
         <div class="menu-content-body">
-          <ol>
-            <li>Orders must be placed by noon on Sunday! for pickup the following Tuesday</li>
-            <li>Pickup of pre-ordered meals is from 3-7pm on Tuesday at
-                36333 E Historic Columbia River Hwy Corbett, OR 97019</li>
-            <li>We accept Cash &amp; Check &amp; now Paypal! </li>
-            <li>Weekly emails with weekly menu options will be sent the previous Thursday</li>
-            <li>If you have friends or neighbors who would be interested-- please forward this email along</li>
-            <li>Please let us know all dietary restrictions in advance</li>
-            <li>Meals come prepackaged in microwaveable (reusable) containers packaged per serving</li>
-            <li>Consider bringing a bag if you order more than 3 servings for ease of transport</li>
-            <li>We love to reuse clean containers! Just remove stickers from lids BEFORE washing or microwaving or after the dry again. </li>
-            <li>*Prices below are a suggested donation. Everyone deserves access to good food</li>
-            <li>Enjoy! </li>
-          </ol>
+            <ol>
+                <li>Orders must be placed by noon on Sunday! for pickup the following Tuesday</li>
+                <li>
+                    Pickup of pre-ordered meals is from 3-7pm on Tuesday at
+                    36333 E Historic Columbia River Hwy Corbett, OR 97019
+                </li>
+                <li>We accept Cash &amp; Check &amp; now Paypal! </li>
+                <li>Weekly emails with weekly menu options will be sent the previous Thursday</li>
+                <li>If you have friends or neighbors who would be interested-- please forward this email along</li>
+                <li>Please let us know all dietary restrictions in advance</li>
+                <li>Meals come prepackaged in microwaveable (reusable) containers packaged per serving</li>
+                <li>Consider bringing a bag if you order more than 3 servings for ease of transport</li>
+                <li>We love to reuse clean containers! Just remove stickers from lids BEFORE washing or microwaving or after the dry again. </li>
+                <li>*Prices below are a suggested donation. Everyone deserves access to good food</li>
+                <li>Enjoy! </li>
+            </ol>
         </div>
-      </div>
+        <hr />
+        <footer>
+            <p>"&copy; @DateTime.Now.Year - Michael Smith, Veronica Aubry, Lawton Browning and Jackson Cafazzo"</p>
+        </footer>
     </div>
   </body>
 </html>
