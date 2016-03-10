@@ -1,3 +1,9 @@
-LarchRecipe/obj
-LarchRecipe/AppData
+LarchRecipe/obj/
+LarchRecipe/bin/
+LarchRecipe/AppData/
 .vs/
+LarchRecipe/Content/doc/
+LarchRecipe/Content/sass-cache/
+
+.vs/LarchRecipe/v14/.suo
+LarchRecipe/App_Data/Ingredients.mdf
