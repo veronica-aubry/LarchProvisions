@@ -89,3 +89,4 @@ C:\Users\doctorjuno\Desktop\whatisgoingon\LarchProvisions\LarchRecipe\obj\Debug\
 C:\Users\doctorjuno\Desktop\whatisgoingon\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.csproj.GenerateResource.Cache
 C:\Users\doctorjuno\Desktop\whatisgoingon\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.dll
 C:\Users\doctorjuno\Desktop\whatisgoingon\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.pdb
+C:\Users\doctorjuno\Desktop\whatisgoingon\LarchProvisions\LarchRecipe\obj\Debug\LarchRecipe.csprojResolveAssemblyReference.cache
