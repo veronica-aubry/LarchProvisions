@@ -14,7 +14,7 @@ namespace LarchRecipe.Controllers
     {
         private RecipesDBContext db = new RecipesDBContext();
 
-        Repository _repository = new Repository();
+        private Repository _repository = new Repository();
 
         // GET: Ingredients
         public ActionResult Index(string searchString)
@@ -44,18 +44,22 @@ namespace LarchRecipe.Controllers
         }
 
         // GET: Ingredients/Details/5
+        //the 5 is the recipe ID
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ingredient ingredient = db.Ingredients.Find(id);
-            if (ingredient == null)
+            var ingredients = from i in db.Ingredients
+                              select i;
+
+            if (ingredients == null)
             {
                 return HttpNotFound();
             }
-            return View(ingredient);
+            ViewBag.Ingredients = ingredients;
+            return View();
         }
 
         // GET: Ingredients/Create

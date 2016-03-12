@@ -15,7 +15,7 @@ namespace LarchRecipe.Controllers
     {
         private RecipesDBContext db = new RecipesDBContext();
 
-        Repository _repository = new Repository();
+        private Repository _repository = new Repository();
 
         // GET: Recipes
         public ActionResult Index()
@@ -26,7 +26,7 @@ namespace LarchRecipe.Controllers
         // GET: Recipes/Create
         public ActionResult Create()
         {
-           ViewBag.Recipes = _repository.GetRecipes();
+            ViewBag.Recipes = _repository.GetRecipes();
             return View();
         }
 
@@ -126,8 +126,22 @@ namespace LarchRecipe.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
+            //we got our recipe
             ViewBag.Recipe = db.Recipe.Find(id);
-            ViewBag.Ingredient = _repository.GetRecipeIngredients(id);
+            /*
+            var ingredients = from i in db.Ingredients
+                              select i;
+
+            ingredients = ingredients.Where(s => s.RecipeId == id);
+
+            but this is a better linq query to get the right ingredients only at once
+            var  = from i in db.Ingredients
+                              where i.RecipeId.Equals(id)
+                              select i;
+                              */
+            List<Ingredient> ingredients = _repository.GetRecipeIngredients(id);
+
+            ViewBag.Ingredients = ingredients;
             return View();
         }
 

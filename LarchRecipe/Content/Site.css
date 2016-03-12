@@ -8434,20 +8434,15 @@ body {
                 color: #ffffff;
             }
 
-.logo {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    bottom: 54.5%;
-    margin: 0;
-    padding: 0;
-    font-family: "Courgette", sans-serif;
-    font-size: 36px;
+img.white-larch-logo {
+    width: 330px;
     text-align: center;
-    text-shadow: #222222;
-    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    padding-right: 10px;
 }
-
+/*
 #carousel-couple {
     margin-bottom: 5px;
 }
@@ -8463,6 +8458,7 @@ body {
 #carousel-road-fog {
     margin-bottom: 825px;
 }
+    */
 
 .item {
     align-items: center;
@@ -8475,9 +8471,14 @@ body {
 }
 
 .carousel {
-    margin: 0 auto;
-    max-width: 100%;
-    background-color: #320d08;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 }
 
 #carousel-example-generic.carousel.slide {
@@ -8534,7 +8535,6 @@ body {
 }
 
 .about {
-    padding: 10px;
     margin: 10px;
     font-size: 16px;
     text-align: justify;
@@ -8607,7 +8607,21 @@ body {
     }
 }
 
-/*# sourceMappingURL=main.css.map */
-.body-content {
+# sourceMappingURL=main.css.map .body-content {
     padding-top: 60px;
+}
+
+.kitchen {
+    width: 100%;
+}
+
+.about-content img {
+    width: 50%;
+    float: left;
+    padding-right: 10px;
+}
+
+.form-control {
+    background-color: #ffffff;
+    color: black;
 }
